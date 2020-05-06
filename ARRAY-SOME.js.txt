@@ -1,0 +1,19 @@
+const log = [ "OK", "OK", "ERROR", "OK", "OK", "OK" ];
+
+let counter = 0;
+let hasError = false;
+
+// Using: .forEach():
+log.forEach( val => { counter++; if ( val === "ERROR" ){ hasError = true; } } );
+console.log( "iterations:", counter, "hasError: ", hasError );
+
+// 4 iterations: 6 hasError:  true
+
+// USING .some():
+counter = 0;
+const hasError2 = log.some( val => { counter++; return val === "ERROR"; } );
+console.log( "Iterations: ", counter, "hasError:", hasError2 );
+// Iterations:  3 hasError: true
+
+
+// REFERENCE: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
